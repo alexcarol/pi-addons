@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "license": "MIT",
-  "description": "Private workspace for Alex Carol's opt-in Pi extensions and add-ons.",
+  "description": "Experimental, opt-in Pi extensions and add-ons by Alex Carol.",
   "workspaces": [
     "packages/*"
   ],

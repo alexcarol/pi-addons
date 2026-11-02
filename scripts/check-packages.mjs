@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const readJSON = path => JSON.parse(readFileSync(path, "utf8"));
 const workspace = readJSON(join(root, "package.json"));
-assert.equal(workspace.private, true, "The workspace root must remain private.");
+assert.equal(workspace.private, true, "The workspace root must keep private: true so it is never published.");
 assert.deepEqual(workspace.workspaces, ["packages/*"]);
 const hostLibraries = new Set([
   "@earendil-works/pi-coding-agent", "@earendil-works/pi-ai",
@@ -21,7 +21,7 @@ for (const entry of readdirSync(join(root, "packages"), { withFileTypes: true })
   if (!entry.isDirectory()) continue;
   const dir = join(root, "packages", entry.name);
   const pkg = readJSON(join(dir, "package.json"));
-  assert.equal(pkg.private, true, `${entry.name} must remain private.`);
+  assert.equal(pkg.private, true, `${entry.name} must keep private: true; packages are not published to npm.`);
   assert.match(pkg.name, /^@alexcarol\/pi-[a-z0-9-]+$/);
   assert.ok(!names.has(pkg.name), `Duplicate package name: ${pkg.name}`);
   names.add(pkg.name);
@@ -57,4 +57,4 @@ for (const entry of readdirSync(join(root, "packages"), { withFileTypes: true })
   count++;
 }
 assert.ok(count > 0, "At least one add-on is required.");
-console.log(`Validated ${count} private, experimental, independently installable Pi package(s).`);
+console.log(`Validated ${count} unpublished, experimental, independently installable Pi package(s).`);

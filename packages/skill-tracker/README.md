@@ -41,3 +41,7 @@ npm run check
 ```
 
 Tests use isolated temporary storage and clean it up. They cover tracking, long-name menu selection, rotation interleavings, lock contention/failure cleanup, four concurrent writer processes and the standalone CLI. Root host smoke tests also load the package with Pi's public discovery API from two isolated projects.
+
+## License
+
+[MIT](LICENSE) © Alex Carol

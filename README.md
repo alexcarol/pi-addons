@@ -1,6 +1,6 @@
 # Pi add-ons
 
-Private monorepo for Alex Carol's opt-in Pi extensions and add-ons.
+Public monorepo for Alex Carol's opt-in Pi extensions and add-ons, released under the [MIT License](LICENSE).
 
 > [!WARNING]
 > **Experimental.** Every package is pre-1.0 (`0.x`) and under active development. Commands, configuration, storage formats and behavior may change or break without notice. Use at your own risk.
@@ -39,11 +39,15 @@ Existing tracker data remains outside the repository in `~/.pi/agent/skill-usage
 ## Add another add-on
 
 1. Create `packages/<name>/` with `package.json`, `src/`, `test/`, and a README.
-2. Give it a unique `@alexcarol/pi-…` name, its own `0.x` version, `private: true`, an experimental notice at the top of its README, and an explicit `pi` resource manifest.
+2. Give it a unique `@alexcarol/pi-…` name, its own `0.x` version, `private: true` (prevents accidental npm publication), an experimental notice at the top of its README, and an explicit `pi` resource manifest.
 3. Declare any host-supplied Pi libraries as wildcard peers; declare real runtime dependencies explicitly. Do not rely on hoisted undeclared dependencies.
 4. Add its `test` script; the root workspace runner picks it up automatically. Add typed source/tests under the existing layout for root typechecking.
 5. Run `npm run check`, then explicitly install that package if wanted.
 
-No publishing or release automation is configured. Both the GitHub repository and npm workspace packages are private.
+Packages are not published to npm: every `package.json` keeps `private: true`, and no release automation is configured. Install add-ons from a local checkout.
 
 See [the layout rationale and references](docs/package-layout.md).
+
+## License
+
+[MIT](LICENSE) © Alex Carol

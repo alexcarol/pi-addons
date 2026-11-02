@@ -1,0 +1,16 @@
+node_modules/
+coverage/
+*.tsbuildinfo
+*.tgz
+.DS_Store
+.pi/
+.env
+.env.*
+!.env.example
+auth.json
+mcp-auth.json
+*.jsonl
+skill-catalog/
+skill-usage*
+*.rotate.lock
+*.log

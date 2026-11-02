@@ -1,0 +1,31 @@
+{
+  "name": "pi-addons",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Private workspace for Alex Carol's opt-in Pi extensions and add-ons.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "check:packages": "node scripts/check-packages.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test --workspaces --if-present",
+    "test:host": "node --test scripts/host.test.mjs",
+    "audit": "npm audit --audit-level=moderate",
+    "check": "npm run check:packages && npm run typecheck && npm test && npm run test:host"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@types/node": "22.19.19",
+    "typescript": "7.0.2"
+  },
+  "overrides": {
+    "minimatch": "11.0.3",
+    "undici": "8.12.3"
+  }
+}

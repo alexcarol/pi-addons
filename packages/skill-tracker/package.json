@@ -1,0 +1,39 @@
+{
+  "name": "@alexcarol/pi-skill-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Local skill-loading telemetry and diagnostics for Pi.",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "extension",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcarol/pi-addons.git",
+    "directory": "packages/skill-tracker"
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "scripts": {
+    "test": "node --test test/tracker.test.ts",
+    "cli": "node src/cli.ts"
+  }
+}

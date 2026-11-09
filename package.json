@@ -20,12 +20,12 @@
     "check": "npm run check:packages && npm run typecheck && npm test && npm run test:host"
   },
   "devDependencies": {
-    "@earendil-works/pi-coding-agent": "1.4.0",
-    "@types/node": "22.19.19",
+    "@earendil-works/pi-coding-agent": "1.5.0",
+    "@types/node": "22.20.5",
     "typescript": "7.0.2"
   },
   "overrides": {
-    "minimatch": "11.0.3",
-    "undici": "8.12.3"
+    "minimatch": "11.0.5",
+    "undici": "8.12.4"
   }
 }
